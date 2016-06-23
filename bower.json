@@ -1,0 +1,29 @@
+{
+  "name": "rate-people-detail",
+  "description": "rate people detail angular module",
+  "main": [
+    "dist/rate-people-detail.js"
+  ],
+  "authors": [
+    "YCLIN"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "rate"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "rate-services": "https://github.com/ylinlee/rate-services.git#^0.0.4"
+  }
+}

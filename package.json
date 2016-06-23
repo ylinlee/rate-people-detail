@@ -1,0 +1,29 @@
+{
+  "name": "rate-people-detail",
+  "version": "0.0.1",
+  "description": "rate people detail angular module",
+  "readme": "README.md",
+  "repository": "https://github.com/ylinlee/rate-people-detail.git",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rate"
+  ],
+  "author": "YCLIN",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "path": "^0.12.7"
+  }
+}
