@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-  angular.module('rateApp.rate-people.detail')
+  angular.module('rateApp.rate-people-detail')
       .directive('rateDetail', RateDetail);
 
   function RateDetail() {
@@ -14,16 +14,18 @@
       };
   }
 
-  RateDetailLink.$inject = ['$scope', '$element', '$attributes'];
+  RateDetailLink.$inject = ['$scope', '$element'];
 
-  function RateDetailLink(scope, element, attributes) {
-    var a = scope, b = element, c = attributes;
-    if(a){
-      if(b){
-        if(!c){
-          a = b;
-        }
-      }
-    }
+  function RateDetailLink(scope, element) {
+    var editForm = document.querySelector('#input-star-edit', element);
+    $(editForm).on('rating.change', function(event, value) {
+      scope.rateDetailCtrl.review.stars = value;
+      var info = {
+        id: 'input-star-readonly',
+        stars: value
+      };
+      scope.$broadcast('updateRatingStar', info);
+      //$('#input-star-readonly', element).rating('update', value);
+    });
   }
 })();

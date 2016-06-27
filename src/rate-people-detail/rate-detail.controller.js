@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('rateApp.rate-people.detail')
+    angular.module('rateApp.rate-people-detail')
         .controller('RateDetailController', RateDetailController);
 
     RateDetailController.$inject = ['$stateParams', '$scope', '$q', 'ReviewService', 'PeopleService', 'DataService', 'RateAssets'];
@@ -12,6 +12,7 @@
         vm.validation = {};
         vm.person = {};
         vm.reviews = [];
+        vm.review = {};
         vm.openReview = openReview;
         vm.addReview = addReview;
         vm.cancelReview = cancelReview;
@@ -74,14 +75,14 @@
             initReview();
 
             //Configuracion de la libraria al cargar.
-            (function() {
+            /*(function() {
                 $('#input-star-readonly').rating({ size: 'xs' });
                 $('#input-star-edit').rating({ size: 'xs' });
                 $('#input-star-edit').on('rating.change', function(event, value) {
                     vm.review.stars = value;
                     $('#input-star-readonly').rating('update', value);
                 });
-            })();
+            })();*/
         }
 
         function openReview() {
@@ -108,12 +109,13 @@
 
         function initReview() {
             vm.review = {
-                stars: 0,
+                stars: -1,
                 description: '',
                 personId: ''
             };
-            $('#input-star-edit').rating('reset');
-            $('#input-star-readonly').rating('reset');
+            $scope.$emit('resetRatingStar');
+            /*$('#input-star-edit').rating('reset');
+            $('#input-star-readonly').rating('reset');*/
         }
 
         function cancelReview() {

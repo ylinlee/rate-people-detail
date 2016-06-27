@@ -24,6 +24,7 @@
   "dependencies": {
     "angular": "^1.5.7",
     "angular-ui-router": "^0.3.1",
-    "rate-services": "https://github.com/ylinlee/rate-services.git#^0.0.4"
+    "rate-services": "https://github.com/ylinlee/rate-services.git#^0.0.4",
+    "rate-people-common": "https://github.com/ylinlee/rate-people-common.git#^0.0.1"
   }
 }

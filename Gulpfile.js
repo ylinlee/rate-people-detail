@@ -42,16 +42,16 @@ gulp.task('jshint', function () {
 gulp.task('templates', function() {
     var TEMPLATE_HEADER = '(function() {\'use strict\';angular.module(\'<%= module %>\'<%= standalone %>).run([\'$templateCache\', function($templateCache) {';
     var TEMPLATE_FOOTER = '}]);})();';
-    gulp.src(sourceDirectory + '/' + moduleName + '/template/**/*.template.html')
+    gulp.src(sourceDirectory + '/' + moduleName + '/**/*.template.html')
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(templateCache({
-            root: 'src/' + moduleName + '/template/',
+            root: 'src/' + moduleName + '/',
             module: 'rateApp.' + moduleName,
             standalone: false,
             templateHeader: TEMPLATE_HEADER,
             templateFooter: TEMPLATE_FOOTER
         }))
-        .pipe(gulp.dest(sourceDirectory + '/' + moduleName + '/template'));
+        .pipe(gulp.dest(sourceDirectory + '/' + moduleName));
 });
 
 gulp.task('build', function() {

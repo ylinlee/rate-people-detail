@@ -31,7 +31,7 @@
                                         <h3>Vista Previa</h3>
                                         <blockqoute>
                                             <b>Valoración: 
-                                              <input id="input-star-readonly" class="rating" data-min="0" data-max="5" data-step="1" data-show-caption="false" data-readonly="true" data-show-clear="false"></b>
+                                              <input input-star stars="{{rateDetailCtrl.review.stars}}" id="input-star-readonly" class="rating" data-min="0" data-max="5" data-step="1" data-show-caption="false" data-readonly="true" data-show-clear="false"></b>
                                             <b>Comentario:</b>
                                             <br /> {{rateDetailCtrl.review.description}}
                                             <br/>
@@ -39,7 +39,7 @@
                                         <h3>Edit</h3>
                                         <blockqoute>
                                             <b>Valoración:
-                                              <input id="input-star-edit" class="rating" data-min="0" data-max="5" data-step="1" data-show-caption="false"></b>
+                                              <input input-star stars="{{rateDetailCtrl.review.stars}}" id="input-star-edit" class="rating" data-min="0" data-max="5" data-step="1" data-show-caption="false"></b>
                                             <b>Comentario: </b>
                                             <br />
                                             <textarea ng-model="rateDetailCtrl.review.description" class="form-control"></textarea>
@@ -59,7 +59,7 @@
                     <b ng-hide="rateDetailCtrl.hasReviews()">No hay ninguna valoración</b>
                     <blockquote ng-repeat="revw in rateDetailCtrl.reviews">
                         <b>Valoración: 
-                              <input input-star id="input-star-readonly-{{revw._id}}" class="rating rating-list" data-min="0" data-max="5" data-step="1" data-show-caption="false" data-readonly="true" data-show-clear="false" data-size="xs"></b>
+                              <input input-star stars="{{revw.stars}}" id="input-star-readonly-{{revw._id}}" class="rating rating-list" data-min="0" data-max="5" data-step="1" data-show-caption="false" data-readonly="true" data-show-clear="false" data-size="xs"></b>
                         <b>Comentario:</b>
                         <br /> {{revw.description}}
                         <br/>
